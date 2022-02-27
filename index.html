@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		body
+		{
+			background:#BDD3D5 ;
+		}
+		#prog
+		{
+			display: flex;
+		}
+		#p
+		{
+			min-width: 700px;
+			margin-top: 20px;
+		}
+
+		.form
+		{	width: 400px;
+			display: flex;
+			flex-direction:column ;
+		}
+		.f1 
+		{
+			width: 350px;
+			height: 30px;
+			border-radius: 5px 5px 5px 5px;
+			border: none;
+		}
+		.f2:focus 
+		{
+			border: solid 5px  #86EAF4;
+		}
+		#btn
+		{
+			background-color: #6BDDE8;
+			border: 1px solid #6BDDE8;
+			width: 90px;
+			height: 30px;
+			margin-top: 10px;
+			border-radius: 5px 5px 5px 5px;
+		}
+		#p div
+		{
+		background: #F6F9F8;
+		width: 350px;
+		height: 40px;
+		border-radius: 5px;
+		margin: 10px;
+		padding-top: 10px;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="prog" >
+		<div id="p">
+		</div>
+<div id ="form"> 
+ 	<label><br>Name:<br></label><input type="text" name="Name" class="f1">
+ 	<label><br>Content:<br></label><input type="text" name="Content" class="f1">
+ 	 	<button id="btn">Add to do</button>	
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+
+	const btn=document.getElementById('btn');
+
+	btn.addEventListener("click",function()
+	{
+	var v=document.createElement("div");
+	var f=document.getElementsByClassName('f1');
+	if(f[0].value!="" || f[1].value!="")
+	{
+	v.textContent=f[0].value + " : " + f[1].value;
+	
+	document.getElementById('p').appendChild(v);
+	
+	f[0].value="";
+	f[1].value="";
+	var img=document.createElement('img');
+	img.src="delete.jpg";
+	img.width="20";
+	img.height="20";
+	v.appendChild(img);
+
+	}});
+
+ 	let o=document.getElementsByClassName("cl");
+    
+     const div=document.querySelector("#prog");
+    
+     div.addEventListener("click",function(e)
+{
+	if(e.target.tagName ==="IMG")
+		 {e.target.parentNode.parentNode.removeChild(e.target.parentNode)}
+
+
+
+});
+
+ 
+ 	
+	
+
+
+</script>
+
+
+</body>
+</html>
